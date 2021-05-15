@@ -249,6 +249,8 @@ ul, li {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
+    height: 30px;
+    overflow: hidden;
   }
   
   .description-element__departure-time {

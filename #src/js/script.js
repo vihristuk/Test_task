@@ -16,5 +16,26 @@ testWebP(function (support) {
   }
 });
 
-let departureTimes = document.querySelectorAll(".description-element__departure-time");
-console.log(departureTimes.length);
+// Модификация времен отправления
+
+var departureTimes = document.querySelectorAll(".description-element__departure-time");
+var description = document.querySelector(".description-element_departure-times");
+
+if (departureTimes.length > 3) {
+  var moreButton = document.createElement("span");
+  moreButton.innerHTML = "еще...";
+  moreButton.classList.add("description-element__departure-time");
+  var thirdItem = document.querySelectorAll("#third-item");             
+  for (var i = 0; i < thirdItem.length; ++i) {
+    var item = thirdItem[i];
+    console.log(item);
+    item.before(moreButton);
+    item.before(moreButton);
+  }
+}
+
+
+moreButton.addEventListener("click", function(e) {
+  description.style.overflow = "visible";
+  moreButton.remove();
+})

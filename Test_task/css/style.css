@@ -685,6 +685,8 @@ li {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: 50%;
+    height: 30px;
+    overflow: hidden;
   }
 
   .description-element__departure-time {
