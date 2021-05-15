@@ -1,0 +1,294 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:regular,600);
+
+@import "normalize";
+@import "fonts";
+
+body {
+  font-family: Open Sans;
+}
+
+p {
+  margin: 0;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+}
+
+.section {
+  max-width: 375px;
+}
+
+.container {
+  max-width: 341px;
+  margin: 27px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container__item {
+  display: flex;
+  flex-direction: column;
+  border: 0.3px solid #828282;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.item__img-wrap {
+  position: relative;
+}
+
+.item__img {
+  border-radius: 16px 16px 0 0;
+}
+
+.item__img-description {
+  position: absolute;
+  left: 0;
+  top: 41px;
+  width: 99px;
+  height: 35px;
+  color: #4b4b4b;
+  background-color: #FED74B;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.item__img-description_on-top {
+  top: 0;
+  color: #fff;
+  background-color: #7553FF;
+  border-radius: 15px 0px 12px;
+  width: 126px;
+  height: 42px
+}
+
+.item__content-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 12px 18px 12px;
+}
+
+.item__title-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.item__duration {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 10px;
+  color: #9E9E9E;
+  margin-bottom: 2px;
+}
+
+.duration__img {
+  margin-right: 9px;
+}
+
+.item__title {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  color: #404040;
+}
+
+.item__description {
+  margin-bottom: 14px;
+}
+
+.item__description-element {
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 14px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: -36px;
+    width: 5px;
+    height: 11px;
+    border-right: 4px solid #fecf01;
+    border-bottom: 4px solid #fecf01;
+    transform: rotate(45deg);
+  }
+}
+
+.description-element__departure-time {
+  display: inline-block;
+  width: 63px;
+  height: 24px;
+  background: #D9E8FF;
+  border-radius: 11px;
+  text-align: center;
+  line-height: 24px;
+  margin-top: 13px;
+  font-size: 14px;
+  color: #343434;
+}
+
+.item__read-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.read-more__price {
+  font-weight: normal;
+  font-size: 30px;
+}
+.read-more__price-condition {
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.read-more__button-link {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 14px;
+  color: #404040;
+  padding: 10px 50px;
+  background: #FED74B;
+  border: 0.5px solid #CBA500;
+  border-radius: 20px;
+}
+
+.read-more__button-link_resize {
+  border-radius: 10px;
+  padding: 10px 50px;
+  font-weight: 600;
+}
+
+@media (min-width: 376px) {
+
+  .section {
+    max-width: 1440px;
+  }
+
+  .container {
+    max-width: 1070px;
+    margin: 70px auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container__item {
+    display: flex;
+    flex-direction: row;
+    height: 369px;
+    margin-bottom: 58px;
+  }
+
+  .container__item_width {
+    width: 1100px;
+  }
+
+  .item__img-description {
+    width: 154px;
+    height: 42px;
+    color: #fff;
+    background-color: #099CE8;
+    font-size: 16px;
+  }
+
+  .item__img-description_on-top {
+    top: 58px;
+    color: #323232;
+    background-color: #FFD83B;;
+    border-radius: 0;
+    width: 175px;
+  }
+
+  .item__content-wrap {
+    padding: 17px 16px;
+  }
+
+  .item__title-wrap {
+    flex-direction: column-reverse;
+    margin-bottom: 13px;
+  }
+  
+  .item__duration {
+    font-size: 14px;
+  }
+
+  .item__title {
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  
+  .item__description-element {
+    font-size: 18px;
+    margin-bottom: 16px;
+    display: flex;
+  }
+
+  .description-element_departure-times {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+  }
+  
+  .description-element__departure-time {
+    width: 73px;
+    height: 28px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-size: 16px;
+    line-height: 28px;
+    &:hover {
+      background: #6BA6FF;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+  
+  .item__read-more {
+    justify-content: start;
+  }
+  
+  .read-more__price-wrap {
+    margin-right: 10px;
+  }
+
+  .read-more__price {
+    font-size: 36px;
+  }
+  .read-more__price-condition {
+    font-size: 14px;
+  }
+  
+  .read-more__button-link {
+    font-size: 18px;
+    padding: 12px 33px;
+  }
+  
+  .read-more__button-link_resize {
+    border-radius: 23px;
+    padding: 12px 33px;
+    font-weight: normal;
+  }
+
+}
