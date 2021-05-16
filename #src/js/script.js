@@ -25,13 +25,8 @@ if (departureTimes.length > 3) {
   var moreButton = document.createElement("span");
   moreButton.innerHTML = "еще...";
   moreButton.classList.add("description-element__departure-time");
-  var thirdItem = document.querySelectorAll("#third-item");             
-  for (var i = 0; i < thirdItem.length; ++i) {
-    var item = thirdItem[i];
-    console.log(item);
-    item.before(moreButton);
-    item.before(moreButton);
-  }
+  var thirdItem = document.querySelector(".third-item");             
+  thirdItem.before(moreButton);
 }
 
 
